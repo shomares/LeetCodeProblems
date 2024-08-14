@@ -1,5 +1,5 @@
 ﻿using LeetCode;
 
 
-var s = MyMaths.MySqrt(8);
-Console.WriteLine(s);
+var result = Pascal.Generate(5);
+Console.WriteLine(result);
