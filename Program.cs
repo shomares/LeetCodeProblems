@@ -1,5 +1,5 @@
 ﻿using LeetCode;
 
 
-var result = Pascal.Generate(5);
+var result = Cookies.FindContentChildren([1, 2, 3], [1, 1]);
 Console.WriteLine(result);
