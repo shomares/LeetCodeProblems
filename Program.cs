@@ -1,5 +1,5 @@
 ﻿using LeetCode;
 
 
-var result = PerimeterIsland.IslandPerimeter([[1,1],[1,1]]);
+var result = ConsecutiveOnes.FindMaxConsecutiveOnes([0, 1]);
 Console.WriteLine(result);
