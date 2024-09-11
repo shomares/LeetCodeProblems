@@ -8,41 +8,66 @@ namespace LeetCode
 {
     internal class CombinationSumTwo
     {
-        private bool isReached = false;
-        private readonly IList<IList<int>> combinations = new List<IList<int>>();
+        private readonly HashSet<string> _cache = [];
+        private readonly HashSet<string> _cacheAll = [];
+        private readonly IList<IList<int>> _combinations = new List<IList<int>>();
 
 
-        public void RecursiveCombinationSum2(int[] candidates, int carry, int target)
+        private void CalculateCombination(int[] candidates, int lastNumber, List<int> currentCombination, int start, int target)
         {
-            if (carry == target)
+            if (target == 0)
             {
-                isReached = true;
-                return;
+                StringBuilder str = CalculateKey(currentCombination);
+
+                if (_cache.Add(str.ToString()))
+                {
+                    //Validate if exists in cache
+                    _combinations.Add(new List<int>(currentCombination));
+                    return;
+                }
+
+
             }
 
-            for (var i = 0; i < candidates.Length; i++)
+            for (int i = start; i < candidates.Length; i++)
             {
-                if (candidates[i] > target || candidates[i] == -1)
+                if (candidates[i] > target || candidates[i] < lastNumber)
                 {
                     continue;
                 }
 
-                RecursiveCombinationSum2(candidates, carry + candidates[i], target);
+                currentCombination.Add(candidates[i]);
+                var key = CalculateKey(currentCombination);
 
-                if (isReached)
+                if (_cacheAll.Add(key.ToString()))
                 {
-                    candidates[i] = -1;
+                    CalculateCombination(candidates, candidates[i], currentCombination, i + 1, target - candidates[i]);
                 }
+
+                currentCombination.RemoveAt(currentCombination.Count - 1);
             }
+        }
+
+        private static StringBuilder CalculateKey(List<int> currentCombination)
+        {
+            var str = new StringBuilder();
+            foreach (var combination in currentCombination)
+            {
+                str.Append(combination);
+            }
+
+            return str;
         }
 
         public IList<IList<int>> CombinationSum2(int[] candidates, int target)
         {
-            var result = new List<IList<int>>();
-
-
-
-            return result;
+            Array.Sort(candidates);
+            _cacheAll.Clear();
+            _combinations.Clear();
+            _cache.Clear();
+            var currentCombination = new List<int>();
+            CalculateCombination(candidates, -1, currentCombination, 0, target);
+            return _combinations;
         }
     }
 }
