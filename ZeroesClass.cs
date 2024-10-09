@@ -15,15 +15,20 @@ namespace LeetCode
             while (index < matrix.Length)
             {
                 var indexj = 0;
-                var row = matrix[index];
 
-                while (indexj < row.Length)
+                while (indexj < matrix[index].Length)
                 {
-                    var value = row[indexj];
+                    var value = matrix[index][indexj];
 
-                    if (value == 0 && !ValidateIfPassed(index, indexj, matrix))
+                    if (value == 0)
                     {
-                        FillZeroes(index, indexj, matrix);
+                        matrix[index][0] = 0;
+                        matrix[0][indexj] = 0;
+
+                        if (index != 0 & indexj != 0)
+                        {
+                            matrix[index][indexj] = int.MinValue;
+                        }
                     }
 
                     indexj++;
@@ -33,49 +38,46 @@ namespace LeetCode
                 index++;
             }
 
+            index = 0;
+            while (index < matrix.Length)
+            {
+                if (matrix[index][0] == 0)
+                {
+                    FillZeroes(0, index, matrix, false);
+                    FillZeroes(index, 0, matrix, true);
+                }
+
+                index++;
+            }
+
+       
+
         }
 
-        private void FillZeroes(int index, int indexj, int[][] matrix)
+        private void FillZeroes(int index, int indexj, int[][] matrix, bool columns)
         {
             //fill columns
             var indexk = 0;
-            while (indexk < matrix[index].Length)
+
+            if (columns)
             {
-                matrix[index][indexk] = 0;
-                indexk++;
+                while (indexk < matrix[index].Length)
+                {
+                    matrix[index][indexk] = 0;
+                    indexk++;
+                }
+            }
+            else
+            {
+                while (indexk < matrix.Length)
+                {
+                    matrix[indexk][indexj] = 0;
+                    indexk++;
+                }
             }
 
-            //fill rows
-            indexk = 0;
-            while (indexk < matrix.Length)
-            {
-                matrix[indexk][indexj] = 0;
-                indexk++;
-            }
+
         }
 
-        private static bool ValidateIfPassed(int index, int indexj, int[][] matrix)
-        {
-            if (index == 0 && indexj == 0)
-            {
-                return false;
-            }
-
-            var row = matrix[index];
-            var column = matrix[indexj];
-
-            if (
-                  matrix[index][0] == 0 &&
-                  matrix[index][row.Length -1] == 0 
-                )
-            {
-
-
-
-                return true;
-            }
-
-            return false;
-        }
     }
 }

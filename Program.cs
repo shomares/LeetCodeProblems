@@ -1,8 +1,11 @@
 ﻿using LeetCode;
 
 
-var s = new BackspaceClass();
+var s = new MonotonicClass();
 
-var r = s.BackspaceCompare("ab##", "c#d#");
 
+
+var r = s.IsMonotonic([1, 1]);
 Console.WriteLine(r);
+
+

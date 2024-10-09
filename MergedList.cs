@@ -17,7 +17,7 @@ namespace LeetCode
         }
 
 
-        public static ListNode ConvertToList(int[] param)
+        public static ListNode ConvertToList(params int[] param)
         {
             ListNode root = new ListNode();
             var result = root;
