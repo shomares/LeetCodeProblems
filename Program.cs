@@ -1,11 +1,11 @@
 ﻿using LeetCode;
 
 
-var s = new MonotonicClass();
+var s = new SortArrayByParityIIClass();
 
 
 
-var r = s.IsMonotonic([1, 1]);
-Console.WriteLine(r);
+s.SortArrayByParityII([4, 2, 5, 7]);
+
 
 
