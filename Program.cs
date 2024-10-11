@@ -1,11 +1,13 @@
 ﻿using LeetCode;
 
 
-var s = new SortArrayByParityIIClass();
+var s = new RemoveDuplicatesClass();
 
 
 
-s.SortArrayByParityII([4, 2, 5, 7]);
+var r = s.RemoveDuplicates([1, 1, 1, 2, 2, 3]);
+
+Console.WriteLine(r);
 
 
 
