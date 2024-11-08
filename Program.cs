@@ -1,10 +1,14 @@
 ﻿using LeetCode;
 
 
-var s = new CommonCharsClass();
+var s = new CountWordsClass();
 
 
 
-var r = s.CommonChars(["bella", "label", "roller"]);
+var r = s.CountWords(
+   ["a", "ab"],
+   ["a", "a", "a", "ab"]
+   );
+
 
 Console.WriteLine(r);
