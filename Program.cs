@@ -1,14 +1,11 @@
 ﻿using LeetCode;
 
 
-var s = new CountWordsClass();
+var s = new LargestSumAfterKNegationsClass();
 
 
 
-var r = s.CountWords(
-   ["a", "ab"],
-   ["a", "a", "a", "ab"]
-   );
+var r = s.LargestSumAfterKNegations([2, -3, -1, 5, -4], 2);
 
 
 Console.WriteLine(r);
