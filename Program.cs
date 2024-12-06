@@ -1,10 +1,10 @@
 ﻿using LeetCode;
 
 
-var s = new DistributeCandiesClass();
+var s = new MaxNumberOfBalloonsClass();
 
 
 
-s.DistributeCandies(7, 4);
+var r = s.MaxNumberOfBalloons("leetcode");
 
-//Console.WriteLine(r);
+Console.WriteLine(r);
