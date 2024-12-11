@@ -1,10 +1,9 @@
 ﻿using LeetCode;
 
 
-var s = new MaxNumberOfBalloonsClass();
+var s = new FindKthLargestClass();
 
 
 
-var r = s.MaxNumberOfBalloons("leetcode");
-
+var r = s.FindKthLargest([-1, 2, 0], 2);
 Console.WriteLine(r);
