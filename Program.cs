@@ -1,9 +1,9 @@
 ﻿using LeetCode;
 
 
-var s = new ShiftGridClass();
+var s = new FreqAlphabetsClass();
 
 
 
-var r = s.ShiftGrid([[3, 8, 1, 9], [19, 7, 2, 5], [4, 6, 11, 10], [12, 0, 21, 13]], 4);
+var r = s.FreqAlphabets("10#11#12");
 Console.WriteLine(r);
