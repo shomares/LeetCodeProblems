@@ -1,8 +1,8 @@
 ﻿using LeetCode;
 
 
-var s = new WordSubsetsClass();
+var s = new StringMatchingClass();
 
 
 
-var r = s.WordSubsets(["amazon", "apple", "facebook", "google", "leetcode"], ["l", "e"]);
+var r = s.StringMatching(["leetcode", "et", "code"]);
