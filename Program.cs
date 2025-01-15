@@ -1,8 +1,8 @@
 ﻿using LeetCode;
 
 
-var s = new StringMatchingClass();
+var s = new FindThePrefixCommonArrayClass();
 
 
 
-var r = s.StringMatching(["leetcode", "et", "code"]);
+var r = s.FindThePrefixCommonArray([2, 3, 1], [3, 1, 2]);
