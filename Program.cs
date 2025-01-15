@@ -1,8 +1,8 @@
 ﻿using LeetCode;
 
 
-var s = new FindThePrefixCommonArrayClass();
+var s = new ReformatClass();
 
 
 
-var r = s.FindThePrefixCommonArray([2, 3, 1], [3, 1, 2]);
+var r = s.Reformat();
