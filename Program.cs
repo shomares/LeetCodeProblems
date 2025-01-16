@@ -1,8 +1,8 @@
 ﻿using LeetCode;
 
 
-var s = new ReformatClass();
+var s = new RotateClass();
 
 
 
-var r = s.Reformat();
+s.Rotate([1, 2], 3);
