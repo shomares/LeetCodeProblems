@@ -1,8 +1,8 @@
 ﻿using LeetCode;
 
 
-var s = new RotateClass();
+var s = new RunningSumClass();
 
 
 
-s.Rotate([1, 2], 3);
+s.RunningSum([1, 2, 3, 4]);
