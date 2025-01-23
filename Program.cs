@@ -1,11 +1,11 @@
 ﻿using LeetCode;
 
 
-var s = new MakeGoodClass();
+var s = new ContainsPatternClass();
 
 
 
-var r = s.MakeGood("leEeetcode");
+var r = s.ContainsPattern([1, 2, 3, 1, 2], 2, 2);
 
 Console.WriteLine(r);
 
