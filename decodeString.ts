@@ -1,7 +1,7 @@
 function decodeString(s: string): string {
     const stack: string[] = []
     const stackNumbers: number[] = []
-    let strNumber = ''
+    let strNumber = ''  
     let index = 0
 
     while (index < s.length) {
