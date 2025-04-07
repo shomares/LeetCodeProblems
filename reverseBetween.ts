@@ -1,12 +1,4 @@
-
-class ListNode {
-    val: number
-    next: ListNode | null
-    constructor(val?: number, next?: ListNode | null) {
-        this.val = (val === undefined ? 0 : val)
-        this.next = (next === undefined ? null : next)
-    }
-}
+import { ListNode } from "./listNode"
 
 
 let finalValue: ListNode | null = null
@@ -47,7 +39,7 @@ function reverseBetween(head: ListNode | null, left: number, right: number): Lis
     return dummy.next;
 };
 
-function printList(list: ListNode | null) {
+export function printList(list: ListNode | null) {
     if (list == null) {
         return
     }
@@ -56,7 +48,7 @@ function printList(list: ListNode | null) {
     printList(list.next)
 }
 
-function createNodeList(array: number[]) {
+export function createNodeList(array: number[]) {
     const head = new ListNode()
     let current = new ListNode()
     head.next = current
@@ -76,8 +68,5 @@ function createNodeList(array: number[]) {
 }
 
 
-const s = reverseBetween(createNodeList([1, 2, 3, 4, 5]), 2, 4)
-
-printList(s)
 
 
