@@ -8,6 +8,7 @@ namespace LeetCode
 {
     internal class AverageClass
     {
+        
         public double Average(int[] salary)
         {
             var result = 0.0d;
